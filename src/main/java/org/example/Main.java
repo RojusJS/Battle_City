@@ -23,6 +23,7 @@ public class Main {
 
     static Player player = new Player(1, 1);
     static Bullet bullet = new Bullet();
+
     static List<EnemyTank> enemies = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -63,11 +64,11 @@ public class Main {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 boolean enemyFlag = false;
+
                 for (EnemyTank enemy : enemies) {
                     if (i == enemy.getX() && j == enemy.getY()) {
                         System.out.print("E");
                         enemyFlag = true;
-                        break;
                     }
                 }
                 if (i == player.getX() && j == player.getY()) {
@@ -75,7 +76,7 @@ public class Main {
                 } else if (enemyFlag) {
                     continue;
                 } else if (map[i][j] == 1) {
-                    System.out.print("#");
+                    System.out.print("@");
                 } else if (bullet.isActive() && i == bullet.getX() && j == bullet.getY()) {
                     System.out.print("*");
                 } else {

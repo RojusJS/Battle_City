@@ -22,12 +22,12 @@ public class EnemyTank {
     public void move(int[][] map) {
         int direction = random.nextInt(4);
         if (direction == 0 && map[x - 1][y] != 1)
-            x--;
+            x--; // i virsu
         else if (direction == 1 && map[x + 1][y] != 1)
-            x++;
+            x++; // i apacia
         else if (direction == 2 && map[x][y - 1] != 1)
-            y--;
+            y--; // i kaire
         else if (direction == 3 && map[x][y + 1] != 1)
-            y++;
+            y++; // i desine
     }
 }
